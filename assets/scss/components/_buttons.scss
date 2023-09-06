@@ -1,0 +1,33 @@
+// Buttons
+
+%btn-shared {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    transition: all 0.5s;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn {
+    &-primary {
+      @extend %btn-shared;
+      color: #333;
+      background-color: $primary-color;
+    }
+    &-light {
+      @extend %btn-shared;
+      color: #333;
+      background-color: $light-color;
+    }
+    &-dark {
+      @extend %btn-shared;
+      color: #fff;
+      background-color: $dark-color;
+    }
+    &-gray {
+        @extend %btn-shared;
+        color: $gray-color;
+        background-color: $dark-color;
+      }
+  }

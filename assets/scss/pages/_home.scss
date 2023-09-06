@@ -1,0 +1,86 @@
+#main {
+  // Section about
+
+  &-about {
+    margin-top: 100px;
+    .container {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr;
+      gap: 3%;
+
+      // About image
+
+      .about-img {
+        height: 500px;
+        position: relative;
+        :first-child {
+          width: 100px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 90%;
+          width: 49%;
+        }
+
+        :last-child {
+          top: 50px;
+          right: 0;
+          width: 49%;
+          height: 85%;
+          position: absolute;
+        }
+      }
+
+      // About title
+
+      .about-title {
+        h1 {
+          font-family: "Dancing Script", sans-serif;
+          font-size: 11rem;
+          color: $primary-color;
+        }
+
+        h2 {
+          font-size: 5rem;
+        }
+
+        p {
+          color: $gray-color;
+          margin: 10px 0;
+        }
+      }
+
+      // About information
+
+      .about-information {
+        grid-column: 1 / span 2;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        p {
+          margin: 10px 10px;
+          font-size: 2rem;
+          font-weight: 500;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  // Tablet version
+
+  @media (max-width: 768px) {
+    // Section about
+
+    &-about {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+        .about-img {
+            grid-column: 1;
+        }
+      }
+    }
+  }
+
+  // Phone version
+}
