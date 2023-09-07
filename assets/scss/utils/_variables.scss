@@ -4,73 +4,13 @@ $primary-color: #c8a97e;
 $secondary-color: #86897d;
 $gray-color: #c0c0c0;
 $dark-gray-color: #2c2b2b;
+$max-width:1200px;
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: $max-width;
   margin: 0 auto;
   padding: 0 2rem;
-}
-
-// Background-Color
-
-.bg {
-  &-dark {
-    background-color: $dark-color;
-  }
-  &-primary {
-    background-color: $primary-color;
-  }
-  &-light {
-    background-color: $light-color;
-  }
-}
-
-// Padding
-
-.py {
-  &-1 {
-    padding: 1rem 0;
-  }
-  &-2 {
-    padding: 2rem 0;
-  }
-  &-3 {
-    padding: 3rem 0;
-  }
-  &-4 {
-    padding: 4rem 0;
-  }
-}
-
-// Margin
-
-.my {
-  &-1 {
-    margin: 1rem 0;
-  }
-  &-2 {
-    margin: 2rem 0;
-  }
-  &-3 {
-    margin: 3rem 0;
-  }
-  &-4 {
-    margin: 4rem 0;
-  }
-
-  &-1x {
-    margin: 0 1rem;
-  }
-  &-2x {
-    margin: 0 2rem;
-  }
-  &-3x{
-    margin: 0 3rem;
-  }
-  &-4x {
-    margin: 0 4rem;
-  }
 }
 
 .active {
@@ -79,6 +19,10 @@ $dark-gray-color: #2c2b2b;
 
 .active-tablet {
     color:$light-color !important;
+}
+
+.active-tablet-scroll {
+  color:$primary-color !important;
 }
 
 .active-btn {

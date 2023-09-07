@@ -5,60 +5,16 @@
   padding: 0 2rem;
 }
 
-.bg-dark {
-  background-color: #333333;
-}
-.bg-primary {
-  background-color: #c8a97e;
-}
-.bg-light {
-  background-color: #ffffff;
-}
-
-.py-1 {
-  padding: 1rem 0;
-}
-.py-2 {
-  padding: 2rem 0;
-}
-.py-3 {
-  padding: 3rem 0;
-}
-.py-4 {
-  padding: 4rem 0;
-}
-
-.my-1 {
-  margin: 1rem 0;
-}
-.my-2 {
-  margin: 2rem 0;
-}
-.my-3 {
-  margin: 3rem 0;
-}
-.my-4 {
-  margin: 4rem 0;
-}
-.my-1x {
-  margin: 0 1rem;
-}
-.my-2x {
-  margin: 0 2rem;
-}
-.my-3x {
-  margin: 0 3rem;
-}
-.my-4x {
-  margin: 0 4rem;
-}
-
 .active {
   color: #c8a97e !important;
 }
 
 .active-tablet {
   color: #ffffff !important;
+}
+
+.active-tablet-scroll {
+  color: #c8a97e !important;
 }
 
 .active-btn {
@@ -69,6 +25,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 html {
@@ -141,6 +98,29 @@ p {
   background-image: url("/assets/img/felicia-retaurant-bg.webp");
   position: relative;
 }
+#header-nav-scroll {
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 2000;
+  transition: top 0.5s;
+  top: -70px;
+}
+#header-nav-scroll h1 {
+  width: 75%;
+}
+#header-nav-scroll div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+#header-nav-scroll div ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3%;
+}
 #header-nav {
   position: absolute;
   top: 0;
@@ -197,13 +177,57 @@ p {
   font-size: 7rem;
   color: #c8a97e;
 }
+#header-nav-tablet-scroll {
+  width: 100%;
+  padding: 10px 0;
+  background-color: white;
+  position: fixed;
+  top: -70px;
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.5s;
+}
+#header-nav-tablet-scroll .nav-tablet-icons {
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+#header-nav-tablet-scroll .nav-tablet-icons h1 {
+  color: #333333;
+}
+#header-nav-tablet-scroll .nav-tablet-icons .btn-tablet-scroll {
+  background-color: #ffffff;
+  color: #333333;
+}
+#header-nav-tablet-scroll .nav-tablet-links-scroll {
+  width: 100%;
+  max-width: 80%;
+  height: 0;
+  overflow: hidden;
+  transition: 300ms;
+}
+#header-nav-tablet-scroll .nav-tablet-links-scroll ul li {
+  padding: 20px 10px;
+}
+#header-nav-tablet-scroll .nav-tablet-links-scroll ul li a {
+  color: #333333;
+  cursor: pointer;
+}
+#header-nav-tablet-scroll .nav-tablet-links-scroll ul .nav-tablet-btn-scroll {
+  background-color: #c8a97e;
+  border-radius: 5px;
+}
 #header-nav-tablet {
   width: 100%;
   padding: 10px 0;
   background-color: black;
   position: absolute;
   top: 0;
-  z-index: 2;
+  z-index: 1000;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -276,11 +300,17 @@ p {
 }
 
 @media (max-width: 768px) {
+  #header-nav-scroll {
+    display: none;
+  }
   #header-nav {
     display: none;
   }
   #header .header-title h1 {
     font-size: 5rem;
+  }
+  #header-nav-tablet-scroll {
+    display: flex;
   }
   #header-nav-tablet {
     display: flex;
@@ -317,7 +347,6 @@ p {
   position: relative;
 }
 #main-about .container .about-img :first-child {
-  width: 100px;
   position: absolute;
   top: 0;
   left: 0;
@@ -333,7 +362,8 @@ p {
 }
 #main-about .container .about-title h1 {
   font-family: "Dancing Script", sans-serif;
-  font-size: 11rem;
+  font-size: 15rem;
+  font-weight: 500;
   color: #c8a97e;
 }
 #main-about .container .about-title h2 {
@@ -355,6 +385,33 @@ p {
   color: #86897d;
 }
 @media (max-width: 768px) {
+  #main-about .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 2fr);
+  }
+  #main-about .container .about-img {
+    width: 100%;
+    gap: 0;
+  }
+  #main-about .container .about-img :last-child {
+    width: 50%;
+    height: 100%;
+    top: 0;
+  }
+  #main-about .container .about-img :first-child {
+    height: 100%;
+    width: 100%;
+  }
+  #main-about .container .about-title {
+    grid-row: 2;
+  }
+  #main-about .container .about-information {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3%;
+  }
+}
+@media (max-width: 576px) {
   #main-about .container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);

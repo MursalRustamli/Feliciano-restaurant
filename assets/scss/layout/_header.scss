@@ -3,6 +3,37 @@
   width: 100%;
   background-image: url("/assets/img/felicia-retaurant-bg.webp");
   position: relative;
+
+  // Nav scroll
+
+  &-nav-scroll {
+    position: fixed;
+    width: 100%;
+    background-color: $light-color;
+    z-index: 2000;
+    transition: top 0.5s;
+    top: -70px;
+    h1 {
+      width: 75%;
+    }
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3%;
+        li {
+        }
+      }
+    }
+  }
+
+  // Header nav
+
   &-nav {
     position: absolute;
     top: 0;
@@ -12,7 +43,6 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-
     .nav-contact {
       width: 100%;
       max-width: 1200px;
@@ -49,6 +79,8 @@
     }
   }
 
+  // Header title
+
   .header-title {
     text-align: center;
     position: absolute;
@@ -64,13 +96,65 @@
     }
   }
 
+  // Nav tablet scroll
+
+  &-nav-tablet-scroll {
+    width: 100%;
+    padding: 10px 0;
+    background-color: white;
+    position: fixed;
+    top: -70px;
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.5s;
+    .nav-tablet-icons {
+      width: 100%;
+      max-width: 80%;
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        color: $dark-color;
+      }
+      .btn-tablet-scroll {
+        background-color: $light-color;
+        color: $dark-color;
+      }
+    }
+    .nav-tablet-links-scroll {
+      width: 100%;
+      max-width: 80%;
+      height: 0;
+      overflow: hidden;
+      transition: 300ms;
+
+      ul {
+        li {
+          padding: 20px 10px;
+          a {
+            color: $dark-color;
+            cursor: pointer;
+          }
+        }
+        .nav-tablet-btn-scroll {
+          background-color: $primary-color;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  // Nav tablet
+
   &-nav-tablet {
     width: 100%;
     padding: 10px 0;
     background-color: black;
     position: absolute;
     top: 0;
-    z-index: 2;
+    z-index: 1000;
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -111,16 +195,16 @@
 // Header before
 
 #header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    z-index: 1;
-  }
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 1;
+}
 
 // Header carts
 
@@ -154,6 +238,10 @@
 
 @media (max-width: 768px) {
   #header {
+    &-nav-scroll {
+      display: none;
+    }
+
     &-nav {
       display: none;
     }
@@ -163,6 +251,11 @@
         font-size: 5rem;
       }
     }
+
+    &-nav-tablet-scroll {
+      display: flex;
+    }
+
     &-nav-tablet {
       display: flex;
     }
