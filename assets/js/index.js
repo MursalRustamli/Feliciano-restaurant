@@ -40,6 +40,80 @@ function scrollFunctiontablet() {
 }
 
 window.onscroll = function () {
-    scrollFunctiontablet();
-    scrollFunction();
-  };
+  scrollFunctiontablet();
+  scrollFunction();
+};
+
+const about_title = document.querySelector(".about-title");
+
+// Home page section about information number animations
+
+let duration = 5000;
+
+about_title.addEventListener("mouseover", function () {
+  function animateValueyear(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  const obj_year = document.querySelector(".value-year");
+  animateValueyear(obj_year, 0, 18, duration);
+
+  ////////////////////////////////
+
+  function animateValuemenu(obj_menu, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj_menu.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  const obj_menu = document.querySelector(".value-menu");
+  animateValuemenu(obj_menu, 0, 100, duration);
+
+  ////////////////////////////////
+
+  function animateValuestaf(obj_menu, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj_menu.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  const obj_staf = document.querySelector(".value-staf");
+  animateValuestaf(obj_staf, 0, 50, duration);
+
+  ////////////////////////////////
+
+  function animateValuecustomer(obj_menu, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj_menu.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  const obj_customer = document.querySelector(".value-customer");
+  animateValuecustomer(obj_customer, 0, 15000, duration);
+});
