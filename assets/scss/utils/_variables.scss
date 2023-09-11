@@ -4,6 +4,7 @@ $primary-color: #c8a97e;
 $secondary-color: #86897d;
 $gray-color: #c0c0c0;
 $dark-gray-color: #2c2b2b;
+$space-gray-color:#fafafa;
 $max-width:1200px;
 
 .container {
@@ -11,6 +12,32 @@ $max-width:1200px;
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.section-title-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 160px;
+}
+
+.section-title {
+  color: $primary-color;
+  position: absolute;
+  font-family: "Dancing script", sans-serif;
+  font-size: 12rem;
+  font-weight: 100;
+  top:0;
+}
+
+.section-subtitle {
+  font-size: 5rem;
+  z-index: 2;
+}
+
+.text-align {
+  text-align: center;
 }
 
 .active {
@@ -27,4 +54,56 @@ $max-width:1200px;
 
 .active-btn {
     height: auto !important;
+}
+
+// Variables Tablet
+
+@media (max-width: 768px) {
+  .section-title-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 107px;
+  }
+  
+  .section-title {
+    color: $primary-color;
+    position: absolute;
+    font-family: "Dancing script", sans-serif;
+    font-size: 10rem;
+    font-weight: 100;
+    top:0;
+  }
+  
+  .section-subtitle {
+    font-size: 3rem;
+    z-index: 2;
+  }
+}
+
+// Variables Phone
+
+@media (max-width: 576px) {
+  .section-title-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 85px;
+  }
+  
+  .section-title {
+    color: $primary-color;
+    position: absolute;
+    font-family: "Dancing script", sans-serif;
+    font-size: 9rem;
+    font-weight: 100;
+    top:0;
+  }
+  
+  .section-subtitle {
+    font-size: 3rem;
+    z-index: 2;
+  }
 }

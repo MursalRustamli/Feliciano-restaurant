@@ -50,7 +50,6 @@ const about_title = document.querySelector(".about-title");
 
 let duration = 5000;
 
-about_title.addEventListener("mouseover", function () {
   function animateValueyear(obj, start, end, duration) {
     let startTimestamp = null;
     const step = (timestamp) => {
@@ -116,4 +115,5 @@ about_title.addEventListener("mouseover", function () {
   }
   const obj_customer = document.querySelector(".value-customer");
   animateValuecustomer(obj_customer, 0, 15000, duration);
-});
+
+  
